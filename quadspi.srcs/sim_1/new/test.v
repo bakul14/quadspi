@@ -69,8 +69,7 @@ module test;
 		begin : sv2v_autoblock_1
 			reg signed [31:0] i;
 			for (i = 0; i < 16; i = i + 1)
-				#(1)
-					;
+				#(1);
 		end
 		masterDataToSend = 8'h22;
 		slaveDataToSend = 8'h33;
@@ -80,8 +79,7 @@ module test;
 		begin : sv2v_autoblock_2
 			reg signed [31:0] i;
 			for (i = 0; i < 16; i = i + 1)
-				#(1)
-					;
+				#(1);
 		end
 		$finish;
 	end
