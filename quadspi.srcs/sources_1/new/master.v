@@ -50,7 +50,7 @@ module Master (
 		if (reset)
 			Register <= 0;
 	end
-	always @(posedge clk)
+	always @(posedge clk) begin
 		if (transmit) begin
 			Register <= Register << 4;
 			MOSI_0 <= Register[4];
@@ -58,6 +58,7 @@ module Master (
 			MOSI_2 <= Register[6];
 			MOSI_3 <= Register[7];
 		end
+	end
 	always @(negedge clk) begin
 		if (maxCount >= 5) begin
 			transmit <= 0;

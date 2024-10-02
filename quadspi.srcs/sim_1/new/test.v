@@ -85,7 +85,6 @@ module test;
 				#(1);
 		end
 
-
 		$finish;
 	end
 endmodule

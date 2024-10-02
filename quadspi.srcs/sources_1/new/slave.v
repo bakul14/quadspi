@@ -44,7 +44,7 @@ module Slave (
 		MISO_2 <= 1'bz;
 		MISO_3 <= 1'bz;
 	end
-	always @(posedge sclk)
+	always @(posedge sclk) begin
 		if (flag) begin
 			Register <= Register << 4;
 			MISO_0 <= Register[4];
@@ -52,7 +52,8 @@ module Slave (
 			MISO_2 <= Register[6];
 			MISO_3 <= Register[7];
 		end
-	always @(negedge sclk)
+	end
+	always @(negedge sclk) begin
 		if (flag) begin
 			Register[0] = MOSI_0;
 			Register[1] = MOSI_1;
@@ -60,4 +61,5 @@ module Slave (
 			Register[3] = MOSI_3;
 			slaveDataReceived <= {slaveDataReceived[3:0], MOSI_3, MOSI_2, MOSI_1, MOSI_0};
 		end
+	end
 endmodule
