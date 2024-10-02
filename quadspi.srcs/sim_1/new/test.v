@@ -17,7 +17,7 @@ module test;
 	wire MISO_1;
 	wire MISO_2;
 	wire MISO_3;
-	wire [1:1] sv2v_tmp_m1_sclk;
+	wire sv2v_tmp_m1_sclk;
 	always @(*) SCLK = sv2v_tmp_m1_sclk;
 	wire sv2v_tmp_m1_CS;
 	always @(*) CS = sv2v_tmp_m1_CS;
