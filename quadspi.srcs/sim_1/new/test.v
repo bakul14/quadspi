@@ -68,7 +68,7 @@ module test;
 		CS = 0;
 		#(2) start = 0;
 		begin : test1
-			reg signed [31:0] i;
+			reg unsigned [4:0] i;
 			for (i = 0; i < 16; i = i + 1)
 				#(1);
 		end
@@ -80,7 +80,7 @@ module test;
 		CS = 0;
 		#(2) start = 0;
 		begin : test2
-			reg signed [31:0] i;
+			reg unsigned [4:0] i;
 			for (i = 0; i < 16; i = i + 1)
 				#(1);
 		end
