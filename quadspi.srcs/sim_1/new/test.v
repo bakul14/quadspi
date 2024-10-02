@@ -19,7 +19,7 @@ module test;
 	wire MISO_3;
 	wire [1:1] sv2v_tmp_m1_sclk;
 	always @(*) SCLK = sv2v_tmp_m1_sclk;
-	wire [1:1] sv2v_tmp_m1_CS;
+	wire sv2v_tmp_m1_CS;
 	always @(*) CS = sv2v_tmp_m1_CS;
 	Master master(
 		.clk(clk),
@@ -67,7 +67,7 @@ module test;
 		slaveSelect = 0;
 		CS = 0;
 		#(2) start = 0;
-		begin : sv2v_autoblock_1
+		begin : test1
 			reg signed [31:0] i;
 			for (i = 0; i < 16; i = i + 1)
 				#(1);
@@ -79,13 +79,13 @@ module test;
 		start = 1;
 		CS = 0;
 		#(2) start = 0;
-		begin : sv2v_autoblock_2
+		begin : test2
 			reg signed [31:0] i;
 			for (i = 0; i < 16; i = i + 1)
 				#(1);
 		end
 
-		
+
 		$finish;
 	end
 endmodule
