@@ -59,6 +59,7 @@ module test;
 		SCLK = clk;
 	end
 	initial begin
+		/// Test 1
 		reset = 0;
 		start = 1;
 		masterDataToSend = 8'hab;
@@ -71,6 +72,8 @@ module test;
 			for (i = 0; i < 16; i = i + 1)
 				#(1);
 		end
+
+		/// Test 2
 		masterDataToSend = 8'h22;
 		slaveDataToSend = 8'h33;
 		start = 1;
@@ -81,6 +84,8 @@ module test;
 			for (i = 0; i < 16; i = i + 1)
 				#(1);
 		end
+
+		
 		$finish;
 	end
 endmodule
